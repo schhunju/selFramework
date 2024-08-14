@@ -9,7 +9,7 @@ from Pages.LoginPage import LoginPage
 class TestLogin(BasePage):
     def test_login(self):
         try:
-            # hello
+            # hello tester
             self.login = LoginPage(self.driver)
             self.login.logger.error("momo khana jam")
             self.login.enterFirstName("John")
