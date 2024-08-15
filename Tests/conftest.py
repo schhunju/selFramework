@@ -1,5 +1,4 @@
-from sys import platform
-
+import platform
 import pytest
 from selenium import webdriver
 
