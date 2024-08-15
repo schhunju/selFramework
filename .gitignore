@@ -1,5 +1,6 @@
 #caches
 /.pytest_cache
+/Tests/.pytest_cache
 
 #logs
 /Tests/selenium_logs
