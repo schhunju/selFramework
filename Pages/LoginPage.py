@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
-from Pages.Basepage import BasePage
-from Utilities.Logger import Logger
+
+from selFramework.Pages.Basepage import BasePage
+from selFramework.Utilities.Logger import Logger
 
 
 class LoginPage(BasePage):

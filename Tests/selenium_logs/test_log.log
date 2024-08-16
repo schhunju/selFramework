@@ -4,3 +4,30 @@
 08/13/24 11:47:13 PM - Utilities.Logger - ERROR - momo khana jam
 08/13/24 11:47:13 PM - Utilities.Logger - INFO - Entering first: John
 08/13/24 11:47:13 PM - Utilities.Logger - INFO - Entering text "John" into element by ('id', 'firstName')
+08/15/24 06:31:27 PM - selFramework.Utilities.Logger - ERROR - momo khana jam
+08/15/24 06:31:27 PM - selFramework.Utilities.Logger - INFO - Entering first: John
+08/15/24 06:31:27 PM - selFramework.Utilities.Logger - INFO - Entering text "John" into element by ('id', 'firstName')
+08/15/24 06:50:14 PM - selFramework.Utilities.Logger - ERROR - Test started
+08/15/24 06:50:14 PM - selFramework.Utilities.Logger - INFO - Entering first: John
+08/15/24 06:50:14 PM - selFramework.Utilities.Logger - INFO - Entering text "John" into element by ('id', 'firstName')
+08/15/24 06:50:50 PM - selFramework.Utilities.Logger - ERROR - Test started
+08/15/24 06:50:50 PM - selFramework.Utilities.Logger - INFO - Entering first: John
+08/15/24 06:50:50 PM - selFramework.Utilities.Logger - INFO - Entering text "John" into element by ('id', 'firstName')
+08/15/24 06:54:59 PM - selFramework.Utilities.Logger - ERROR - momo khana jaane
+08/15/24 06:54:59 PM - selFramework.Utilities.Logger - INFO - Entering first: John
+08/15/24 06:54:59 PM - selFramework.Utilities.Logger - INFO - Entering text "John" into element by ('id', 'firstName')
+08/16/24 10:43:25 AM - selFramework.Utilities.Logger - ERROR - momo khana jam
+08/16/24 10:43:25 AM - selFramework.Utilities.Logger - INFO - Entering first: John
+08/16/24 10:43:25 AM - selFramework.Utilities.Logger - INFO - Entering text "John" into element by ('id', 'firstName')
+08/16/24 10:43:25 AM - selFramework.Utilities.Logger - ERROR - Login test failed. Screenshot saved at screenshots\login_error_2024-08-16_10-43-25.png
+08/16/24 10:43:25 AM - selFramework.Utilities.Logger - ERROR - assert 'dashboard' in 'DEMOQA'
+ +  where 'DEMOQA' = <selenium.webdriver.chrome.webdriver.WebDriver (session="369d9d89aceb81aff1f68792bf4b7ed8")>.title
+ +    where <selenium.webdriver.chrome.webdriver.WebDriver (session="369d9d89aceb81aff1f68792bf4b7ed8")> = <Tests.test_login.TestLogin object at 0x0000017C2BAD5F70>.driver
+08/16/24 10:44:23 AM - selFramework.Utilities.Logger - ERROR - momo khana jam
+08/16/24 10:44:23 AM - selFramework.Utilities.Logger - INFO - Entering first: John
+08/16/24 10:44:23 AM - selFramework.Utilities.Logger - INFO - Entering text "John" into element by ('id', 'firstName')
+08/16/24 10:44:24 AM - selFramework.Utilities.Logger - INFO - Login test passed
+08/16/24 10:47:17 AM - selFramework.Utilities.Logger - ERROR - momo khana jam
+08/16/24 10:47:17 AM - selFramework.Utilities.Logger - INFO - Entering first: John
+08/16/24 10:47:17 AM - selFramework.Utilities.Logger - INFO - Entering text "John" into element by ('id', 'firstName')
+08/16/24 10:47:17 AM - selFramework.Utilities.Logger - INFO - Login test passed
