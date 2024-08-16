@@ -1,6 +1,7 @@
 #caches
 .pytest_cache
-Testsests/.pytest_cache
+**/__pycache__/
+Tests/.pytest_cache
 
 #logs
 Tests/selenium_logs
