@@ -17,5 +17,11 @@ class LoginPage(BasePage):
 
     def enterFirstName(self, firstNameText):
         self.logger.info(f'Entering first: {firstNameText}')
+        #Since the take_screenshot method is static, we can call it directly from the class and need to paas the driver everytime
         self.screenshot.take_screenshot(self.driver,"abcd")
         self.enter_text_into_element(self.firstName, firstNameText)
+
+    def dummyScreenshotClass(self):
+        #Since the take_screenshot method is static, we can call it directly from the class and need to paas the driver everytime
+        self.screenshot.take_screenshot(self.driver,"abcd")
+
