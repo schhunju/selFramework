@@ -2,6 +2,8 @@ import platform
 import pytest
 from selenium import webdriver
 
+from Utilities.static_screenshot import Screenshot
+
 
 @pytest.fixture()
 def setup(request):
@@ -10,7 +12,7 @@ def setup(request):
     #need to add step to pick browser from config file for all os.
     try:
         if current_os == "Darwin":
-            driver = webdriver.Safari()
+            driver = webdriver.Chrome()
 
         if current_os == 'Windows':
             driver = webdriver.Chrome()

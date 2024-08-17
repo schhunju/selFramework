@@ -2,7 +2,7 @@ import logging
 import os
 
 class Logger:
-    def __init__(self, log_folder="selenium_logs", log_file="test_log.log"):
+    def __init__(self, log_folder="Tests/selenium_logs", log_file="test_log.log"):
         self.log_folder = log_folder
         self.log_file = os.path.join(self.log_folder, log_file)
         self.logger = self._setup_logger()
