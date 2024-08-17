@@ -3,9 +3,12 @@ from selenium import webdriver
 import time
 
 class Screenshot:
+    # Initialize the Screenshot class with driver
+    def __init__(self, driver):
+        self.driver = driver
 
-    @staticmethod
-    def take_screenshot(driver, file_name: str):
+
+    def take_screenshot(self, file_name: str):
         # Create a screenshots directory if it doesn't exist
         screenshots_dir = 'Tests/screenshots'
         if not os.path.exists(screenshots_dir):
@@ -14,5 +17,7 @@ class Screenshot:
         # Save the screenshot with a timestamp
         timestamp = time.strftime('%Y%m%d-%H%M%S')
         screenshot_path = os.path.join(screenshots_dir, f'{file_name}_{timestamp}.png')
-        driver.save_screenshot(screenshot_path)
+
+        # Save the screenshot
+        self.driver.save_screenshot(screenshot_path)
         print(f"Screenshot saved at {screenshot_path}")

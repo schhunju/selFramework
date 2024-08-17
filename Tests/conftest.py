@@ -2,7 +2,7 @@ import platform
 import pytest
 from selenium import webdriver
 
-from Utilities.static_screenshot import Screenshot
+from Utilities.dynamic_screenshot import Screenshot
 
 
 @pytest.fixture()
