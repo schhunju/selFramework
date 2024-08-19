@@ -12,7 +12,7 @@ class TestLogin(BasePage):
             # hello tester 123
             self.login = LoginPage(self.driver)
             self.login.logger.error("momo khana jam")
-            self.login.enterFirstName("John")
+            self.login.enterFirstName("Nirjala")
             assert "dashboard" in self.driver.title
             time.sleep(5)
         except Exception as e:
