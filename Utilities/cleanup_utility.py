@@ -21,4 +21,4 @@ def cleanup_logs_and_screenshots():
     print("Cleaning up logs and screenshots...")
     delete_files_in_directory(logs_directory)
     delete_files_in_directory(screenshots_directory)
-    print("Cleanup complete.")
+    print("Cleanup complete...")
