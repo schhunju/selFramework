@@ -4,7 +4,7 @@ import pytest
 
 from Pages.Basepage import BasePage
 from Pages.LoginPage import LoginPage
-from Utilities import screenshot
+
 from Utilities.screenshot import ScreenshotUtil
 
 

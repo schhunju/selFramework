@@ -1,10 +1,14 @@
 import platform
 import pytest
 from selenium import webdriver
+from Utilities.delete_logs_and_screenshots import delete_logs_and_screenshots
 
-
-@pytest.fixture()
+@pytest.fixture(scope="session", autouse=True)
 def setup(request):
+    
+    # Delete logs and screenshots before starting the tests
+    delete_logs_and_screenshots()
+
     global driver
     current_os = str(platform.system())
     #need to add step to pick browser from config file for all os.
