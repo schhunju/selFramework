@@ -5,3 +5,7 @@ Tests/.pytest_cache
 
 #logs
 Tests/selenium_logs
+
+#screenshots
+screenshots
+Tests/screenshots
