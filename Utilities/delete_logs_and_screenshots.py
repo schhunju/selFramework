@@ -15,7 +15,7 @@ def delete_files(directory, file_extension):
 def delete_logs_and_screenshots():
     # Define directories
     log_dir = "selenium_logs"  # Directory for log files
-    screenshot_dir = "path/to/screenshots"  # Directory for screenshots
+    screenshot_dir = "screenshots"  # Directory for screenshots
 
     # Delete log files
     delete_files(log_dir, ".log")
