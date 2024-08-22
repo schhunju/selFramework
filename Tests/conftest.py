@@ -4,6 +4,9 @@ from selenium import webdriver
 from Utilities.cleanup_utility import cleanup_logs_and_screenshots
 
 
+def pytest_addoption(parser):
+    parser.addoption("--browser", action="store", default="chrome", help="browser to use for tests")
+
 @pytest.fixture()
 def setup(request):
     # Clean up logs and screenshots before starting the test
@@ -11,6 +14,8 @@ def setup(request):
 
     global driver
     current_os = str(platform.system())
+    browser = request.config.getoption("--browser").lower()
+
     #need to add step to pick browser from config file for all os.
     try:
         if current_os == "Darwin":

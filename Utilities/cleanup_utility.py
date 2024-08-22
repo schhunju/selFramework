@@ -4,7 +4,7 @@ import glob
 
 def delete_files_in_directory(directory):
     if os.path.exists(directory):
-        files = glob.glob(os.path.join(directory, '*'))
+        files = glob.glob(os.path.join(directory, '*')) #to get a list of all files in the directory. The * wildcard is used to match all files.
         for f in files:
             try:
                 os.remove(f)
