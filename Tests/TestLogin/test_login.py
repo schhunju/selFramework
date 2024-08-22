@@ -1,7 +1,4 @@
-from datetime import time
-
-import pytest
-
+import time
 from Pages.Basepage import BasePage
 from Pages.LoginPage import LoginPage
 
@@ -11,9 +8,12 @@ class TestLogin(BasePage):
         try:
             # hello tester 123
             self.login = LoginPage(self.driver)
-            self.login.logger.error("momo khana jam")
+            self.login.logger.info("test_login started")
             self.login.enterFirstName("John")
-            assert "dashboard" in self.driver.title
-            time.sleep(5)
+            #calling the take_screenshot method from Screenshot class by passing the filename
+            self.login.screenshot.take_screenshot("abcde")
+            assert "DEMOQA" in self.driver.title
+            time.sleep(2)
+
         except Exception as e:
             print(str(e))

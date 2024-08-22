@@ -4,4 +4,9 @@
 Tests/.pytest_cache
 
 #logs
+selenium_logs
 Tests/selenium_logs
+
+#screenshots
+screenshots
+Tests/screenshots
