@@ -1,0 +1,3 @@
+08/22/24 10:26:07 AM - Utilities.Logger - INFO - test_login started
+08/22/24 10:26:07 AM - Utilities.Logger - INFO - Entering first: Ashmita
+08/22/24 10:26:07 AM - Utilities.Logger - INFO - Entering text "Ashmita" into element by ('id', 'firstName')

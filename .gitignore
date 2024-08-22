@@ -9,3 +9,7 @@ Tests/selenium_logs
 #screenshots
 screenshots
 Tests/screenshots
+
+# Ignore HTML reports
+reports/
+*.html
