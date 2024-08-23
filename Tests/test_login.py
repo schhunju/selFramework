@@ -9,11 +9,10 @@ from Utilities.screenshot import ScreenshotUtil
 class TestLogin(BasePage):
     def test_login(self):
         try:
-            # hello tester 123
             self.login = LoginPage(self.driver)
-            self.login.enterFirstName("John")
+            self.login.enterFirstName("Archana")
             assert "dashboard" in self.driver.title
-            time.sleep(5)
+            time.sleep(3)
 
             # take screenshot
             ScreenshotUtil.take_screenshot(self.driver, "login_screenshot.png")

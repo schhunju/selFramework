@@ -5,3 +5,6 @@ Tests/.pytest_cache
 
 #logs
 Tests/selenium_logs
+
+# html files
+*.html

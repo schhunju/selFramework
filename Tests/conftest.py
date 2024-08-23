@@ -13,7 +13,6 @@ def setup(request):
     delete_logs_and_screenshots()
     global driver
 
-    #need to add step to pick browser from config file for all os.
     try:
         if current_os == "Darwin":
             driver = webdriver.Safari()
