@@ -10,3 +10,5 @@ Tests/selenium_logs
 #screenshots
 screenshots
 Tests/screenshots
+
+venv

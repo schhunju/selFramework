@@ -1,4 +1,5 @@
 import platform
+from Utilities.folder import clear_folder
 import pytest
 from selenium import webdriver
 
@@ -10,6 +11,10 @@ def setup(request):
     global driver
     current_os = str(platform.system())
     #need to add step to pick browser from config file for all os.
+    #clear screenshot
+    clear_folder("Tests\screenshots")
+    clear_folder("Tests\selenium_logs")
+
     try:
         if current_os == "Darwin":
             driver = webdriver.Chrome()
