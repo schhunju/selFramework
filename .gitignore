@@ -8,3 +8,9 @@ Tests/selenium_logs
 
 # html files
 *.html
+
+# ini files
+Database/database.ini
+
+#yaml files
+Database/config.yaml

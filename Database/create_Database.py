@@ -1,53 +1,81 @@
-import sqlite3
+import psycopg2
+from configparser import ConfigParser
+from selenium import webdriver
 
-# Creating connection to the db
-conn = sqlite3.connect('selDatabase.db')
-cursor = conn.cursor()
 
-# Creating  table
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT,
-        age INTEGER,
-        address TEXT
-    )
-''')
+# Function to read database configuration from the config file
+def config(filename='database.ini', section='postgresql'):
+    # Create a parser
+    parser = ConfigParser()
+    # Read the config file
+    parser.read(filename)
 
-# Inserting in table
-cursor.execute("INSERT INTO users (name, age, address) VALUES (?, ?, ?)", ('Archana', 24, 'Kapan'))
-cursor.execute("INSERT INTO users (name, age, address) VALUES (?, ?, ?)", ('Amrit', 45, 'Kapan'))
+    # Get section, default to postgresql
+    db = {}
+    if parser.has_section(section):
+        params = parser.items(section)
+        for param in params:
+            db[param[0]] = param[1]
+    else:
+        raise Exception(f'Section {section} not found in the {filename} file')
 
-# Commit the insert operations
-conn.commit()
+    return db
 
-# Reading data
-print("Initial data:")
-cursor.execute("SELECT * FROM users")
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
 
-# Updating
-cursor.execute("UPDATE users SET age = ? WHERE name = ?", (28, 'Amrit'))
-conn.commit()
+# CRUD Operations
+try:
+    # Connecting to the PostgreSQL database
+    params = config()  # Read connection parameters from database.ini
+    connection = psycopg2.connect(**params)
+    cursor = connection.cursor()
 
-# Reading data after update
-print("\nAfter update:")
-cursor.execute("SELECT * FROM users")
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
+    # Creating the 'student' table if it doesn't exist
+    create_table_query = """
+    CREATE TABLE IF NOT EXISTS student (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(100),
+        address VARCHAR(255),
+        age INT
+    );
+    """
+    cursor.execute(create_table_query)
+    connection.commit()
+    print("Table 'student' created successfully")
 
-# Deleting data
-cursor.execute("DELETE FROM users WHERE name = ?", ('Amrit',))
-conn.commit()
+    # Inserting a new student record (Create)
+    insert_query = """
+    INSERT INTO student (name, address, age)
+    VALUES (%s, %s, %s)
+    RETURNING id;
+    """
+    cursor.execute(insert_query, ('Archana', 'Kapan', 23))
+    connection.commit()
+    student_id = cursor.fetchone()[0]
+    print(f"Inserted student with ID: {student_id}")
 
-# Reading data after deleting
-print("\nAfter deletion:")
-cursor.execute("SELECT * FROM users")
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
+    # Reading the student records (Read)
+    select_query = "SELECT * FROM student;"
+    cursor.execute(select_query)
+    records = cursor.fetchall()
+    print("Student records:")
+    for row in records:
+        print(row)
 
-conn.close()
+    # Updating a student record (Update)
+    update_query = """
+    UPDATE student
+    SET name = %s, address = %s, age = %s
+    WHERE id = %s;
+    """
+    cursor.execute(update_query, ('Amrit', 'Budhanilkantha', 23, student_id))
+    connection.commit()
+    print(f"Updated student with ID: {2}")
+
+    # Deleting a student record (Delete)
+    delete_query = "DELETE FROM student WHERE id = 16;"
+    cursor.execute(delete_query)
+    connection.commit()
+
+except (Exception, psycopg2.DatabaseError) as error:
+    print("Error while performing CRUD operations", error)
+
