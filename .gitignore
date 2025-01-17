@@ -2,6 +2,12 @@
 .pytest_cache
 **/__pycache__/
 Tests/.pytest_cache
+*.pyc
+.venv
+.env
+.idea
+
+PipFile.lock
 
 #logs
 selenium_logs
