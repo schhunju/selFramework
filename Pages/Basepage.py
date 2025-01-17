@@ -8,5 +8,5 @@ class BasePage:
     def clickElementByXpath(self, xpath):
         WebDriverWait(self.driver, 15).until(EC.presence_of_element_located((By.XPATH, xpath))).click()
     #
-    # def enter_text_into_element(self, locator, text):
-    #     self.driver.find_element(By.XPATH, locator).send_keys(text)
+    def enter_text_into_element(self, locator, text):
+        self.driver.find_element(By.XPATH, locator).send_keys(text)
