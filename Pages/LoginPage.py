@@ -10,7 +10,7 @@ class LoginPage(BasePage):
     def __init__(self, driver):
         self.driver = driver
 
-    googleSearch = "//*[@name='q']"
+    input_search = "//*[@name='q']"
 
     def invoke_browser(self, url):
         print(self.driver)
