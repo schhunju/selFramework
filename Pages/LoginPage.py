@@ -1,27 +1,23 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 from Pages.Basepage import BasePage
-from Utilities.Logger import Logger
-from Utilities.dynamic_screenshot import Screenshot
 
 
 class LoginPage(BasePage):
+
     def __init__(self, driver):
         self.driver = driver
-        self.logger = Logger().get_logger()
-        #driver must be passed to initialize the Screenshot class
-        self.screenshot = Screenshot(driver)
 
-    firstName = (By.ID, "firstName")
-    lastName = (By.ID, "lastName")
-    femaleGender = (By.ID, "gender-ratio-2")
-    stateId = (By.XPATH, "//div[contains(text(),'Select State')]")
+    googleSearch = "//*[@name='q']"
 
-    def enterFirstName(self, firstNameText):
-        self.logger.info(f'Entering first: {firstNameText}')
-        #we can take screenshot here by just passing the filename
-        self.screenshot.take_screenshot("abcd")
-        self.enter_text_into_element(self.firstName, firstNameText)
+    def invoke_browser(self, url):
+        print(self.driver)
+        self.driver.get(url)
+        print(url)
 
-    def dummyClass(self):
-        #we can take screenshot here by just passing the filename
-        self.screenshot.take_screenshot("abcd")
+    def search_google(self, url):
+        self.invoke_browser(url)
+        # BasePage.enter_text_into_element(self.googleSearch, search_text)
+        # BasePage.clickElementByXpath(self, LoginPage.googleSearch)

@@ -1,11 +1,12 @@
 import pytest
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-@pytest.mark.usefixtures("setup")
+@pytest.mark.usefixtures("driver_setup")
 class BasePage:
-
-    def enter_text_into_element(self, by_locator, text):
-        self.logger.info(f'Entering text "{text}" into element by {by_locator}')
-        WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(by_locator)).clear()
-        WebDriverWait(self.driver, 50).until(EC.visibility_of_element_located(by_locator)).send_keys(text)
+    def clickElementByXpath(self, xpath):
+        WebDriverWait(self.driver, 15).until(EC.presence_of_element_located((By.XPATH, xpath))).click()
+    #
+    # def enter_text_into_element(self, locator, text):
+    #     self.driver.find_element(By.XPATH, locator).send_keys(text)

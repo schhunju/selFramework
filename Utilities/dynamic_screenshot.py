@@ -10,7 +10,7 @@ class Screenshot:
 
     def take_screenshot(self, file_name: str):
         # Create a screenshots directory if it doesn't exist
-        screenshots_dir = 'Tests/screenshots'
+        screenshots_dir = 'tests/screenshots'
         if not os.path.exists(screenshots_dir):
             os.makedirs(screenshots_dir)
 
