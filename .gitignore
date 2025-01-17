@@ -1,12 +1,18 @@
 #caches
 .pytest_cache
 **/__pycache__/
-Tests/.pytest_cache
+tests/.pytest_cache
+*.pyc
+.venv
+.env
+.idea
+
+PipFile.lock
 
 #logs
 selenium_logs
-Tests/selenium_logs
+tests/selenium_logs
 
 #screenshots
 screenshots
-Tests/screenshots
+tests/screenshots
