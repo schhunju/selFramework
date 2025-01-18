@@ -6,6 +6,7 @@ tests/.pytest_cache
 .venv
 .env
 .idea
+report.html
 
 PipFile.lock
 
