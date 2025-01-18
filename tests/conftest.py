@@ -77,3 +77,14 @@ def base_url(environment):
     configure = get_config()
     configure.read(get_config_file_path())
     return configure[environment]["base_url"]
+
+@pytest.fixture(scope="module")
+def api_url(environment):
+    """
+    Fixture to provide "api_url" from the config file for a given environment.
+    :param environment:
+    :return:
+    """
+    configure = get_config()
+    configure.read(get_config_file_path())
+    return configure[environment]["api_url"]

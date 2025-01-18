@@ -5,7 +5,7 @@ tests/.pytest_cache
 *.pyc
 .venv
 .env
-.idea
+.idea/
 report.html
 
 PipFile.lock
